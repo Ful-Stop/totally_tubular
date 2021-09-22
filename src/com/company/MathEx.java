@@ -8,7 +8,6 @@ public class MathEx {
         ones *= 10;
         tens /= 10;
         int finalValue = inputExtra + tens + ones;
-        System.out.println(finalValue);
         return finalValue;
     }
     public static int timeLeft(int curHour, int curMin, int depHour, int depMin) {
@@ -20,11 +19,43 @@ public class MathEx {
         return totalHour + totalMin;
     }
     public static int dayOfWeek(int DOTW, int date) {
-
+        int dateDOTW = (date - 1 + DOTW) % 7;
+        System.out.println(dateDOTW);
+        return dateDOTW;
     }
 
     public static void main(String[] args) {
-        digitSwapper(143);
-        timeLeft(2, 15, 6, 10);
+
+        int input = 6;
+        int output = digitSwapper(input);
+        System.out.println(input +" " + output);
+
+        input = 381;
+        output = digitSwapper(input);
+        System.out.println(input +" " + output);
+
+        timeLeft(1,34, 8, 20);
+        timeLeft(1,15, 4, 36);
+
+        dayOfWeek(0,1);
+        dayOfWeek(0,14);
+        dayOfWeek(6, 22);
+        dayOfWeek(5, 4);
+        dayOfWeek(1,24);
+        dayOfWeek(2,1);
+
     }
 }
+
+/*
+6 60
+381 318
+6 hours 46 minute(s)
+3 hours 21 minute(s)
+0
+6
+6
+1
+3
+2
+ */
